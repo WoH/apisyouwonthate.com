@@ -290,7 +290,7 @@ export class UsersController extends Controller {
 
 This is a brand new approach. Instead of descriptive annotations or comments shoved in as an afterthought, the API framework has been designed around the use of annotations. 
 
-Beyond simple things like request validation, [TSOA handles authentication](https://github.com/lukeautry/tsoa#authentication) quite nicely. Numerous times I've seen API documentation say bearer tokens are required, or an OAuth token needs a certain scope, only to find out the developer forgot to register that in the API controller. Free sensitive data anyone?
+Beyond simple things like request validation, [TSOA handles authentication](https://tsoa-community.github.io/docs/authentication.html) quite nicely. Numerous times I've seen API documentation say bearer tokens are required, or an OAuth token needs a certain scope, only to find out the developer forgot to register that in the API controller. Free sensitive data anyone?
 
 TSOA solves that by having you register security definitions, then reference them in your annotations, and have middlewares created to handle the actual logic. This way the annotations are all the actual source of truth for authentication, instead of just being lies in comments or YAML.
 
@@ -299,7 +299,7 @@ TSOA solves that by having you register security definitions, then reference the
 Then, OpenAPI can be generated from a command:
 
 ```shell
-tsoa swagger.json
+tsoa spec
 ```
 
 Whilst I definitely have a preference for design-first development for all the prototyping benefits it brings (changing a few lines of YAML in an awesome GUI is easier than rewriting a bunch of code every time you get feedback on a prototype), this new approach for making annotations useful is very much closing the gap. If you're going to use a code-first approach, you should absolutely try and find a framework like TSOA to power your API and reduce the chance of mismatches.
